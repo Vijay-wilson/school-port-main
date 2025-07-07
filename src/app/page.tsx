@@ -176,7 +176,7 @@ const pricingPlans = [
 ];
 
 export default function Home() {
-  const heroVisualRef = useRef(null);
+  const heroVisualRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Scroll progress indicator
@@ -187,22 +187,26 @@ export default function Home() {
         const docHeight =
           document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = scrollTop / docHeight;
-        (scrollProgress as HTMLElement).style.transform = `scaleX(${scrollPercent})`;
+        (
+          scrollProgress as HTMLElement
+        ).style.transform = `scaleX(${scrollPercent})`;
       }
     };
 
     window.addEventListener("scroll", handleScroll);
 
     // Smooth scrolling for navigation links
-    const handleSmoothScroll = (e) => {
+    const handleSmoothScroll = (e: Event) => {
       e.preventDefault();
-      const targetId = e.currentTarget.getAttribute("href");
-      const target = document.querySelector(targetId);
-      if (target) {
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+      const targetId = (e.currentTarget as HTMLElement).getAttribute("href");
+      if (targetId) {
+        const target = document.querySelector(targetId);
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
       }
     };
 
@@ -252,13 +256,13 @@ export default function Home() {
     }
 
     // Parallax effect for hero visual
-    const handleMouseMove = (e) => {
-      if (heroVisualRef.current) {
-        const x = (e.clientX / window.innerWidth - 0.5) * 20;
-        const y = (e.clientY / window.innerHeight - 0.5) * 20;
-        heroVisualRef.current.style.transform = `translate(${x}px, ${y}px)`;
-      }
-    };
+const handleMouseMove = (e: MouseEvent) => {
+  if (heroVisualRef.current) {
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    heroVisualRef.current.style.transform = `translate(${x}px, ${y}px)`;
+  }
+};
 
     window.addEventListener("mousemove", handleMouseMove);
 
