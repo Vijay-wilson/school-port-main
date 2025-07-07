@@ -182,11 +182,13 @@ export default function Home() {
     // Scroll progress indicator
     const handleScroll = () => {
       const scrollProgress = document.querySelector(".scroll-indicator");
-      const scrollTop = window.pageYOffset;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = scrollTop / docHeight;
-      scrollProgress.style.transform = `scaleX(${scrollPercent})`;
+      if (scrollProgress) {
+        const scrollTop = window.pageYOffset;
+        const docHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = scrollTop / docHeight;
+        (scrollProgress as HTMLElement).style.transform = `scaleX(${scrollPercent})`;
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
