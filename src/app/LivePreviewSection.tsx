@@ -1,5 +1,5 @@
 import React from "react";
-import { Bot, Image as ImageIcon, Brain, ChartLine } from "lucide-react";
+import { Bot, Brain, ChartLine } from "lucide-react";
 const LivePreviewSection = () => {
   return (
     <div>
