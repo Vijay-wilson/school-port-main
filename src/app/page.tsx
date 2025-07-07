@@ -357,21 +357,6 @@ export default function Home() {
                 progress with intelligent insights, and revolutionize your
                 child's educational journey through smart automation.
               </p>
-
-              {/* <div className="platform-badges">
-                <span className="badge">
-                  <Bot className="w-5 h-5 inline mr-2" /> iOS App
-                </span>
-                <span className="badge">
-                  <Bot className="w-5 h-5 inline mr-2" /> Android
-                </span>
-                <span className="badge">
-                  <Bot className="w-5 h-5 inline mr-2" /> Web Portal
-                </span>
-                <span className="badge">
-                  <Bot className="w-5 h-5 inline mr-2" /> AI Assistant
-                </span>
-              </div> */}
               <PlatformBadges />
               <div className="cta-buttons">
                 <button

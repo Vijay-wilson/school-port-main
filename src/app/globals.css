@@ -1243,3 +1243,147 @@ body {
     height: 590px;
   }
 }
+/* Updated mobile styles for mini-phones */
+
+/* Default mini-phone styles (desktop) */
+.mini-phone {
+  width: 120px;
+  height: 240px;
+  border-radius: 20px;
+  position: relative;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.mini-phone:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.mini-phone:nth-child(1) {
+  background: url("/images/home.png") center/cover;
+}
+.mini-phone:nth-child(2) {
+  background: url("/images/school-diary.png") center/cover;
+}
+.mini-phone:nth-child(3) {
+  background: url("/images/chat.png") center/cover;
+}
+
+/* Tablet view improvements */
+@media (max-width: 768px) {
+  .phone-showcase {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .phone-mockup {
+    width: 220px;
+    height: 440px;
+  }
+
+  .secondary-phones {
+    flex-direction: row;
+    margin-left: 0;
+    justify-content: center;
+    gap: 20px; /* Add gap between mini phones */
+  }
+
+  /* Increase mini-phone size for tablets */
+  .mini-phone {
+    width: 100px;
+    height: 200px;
+    border-radius: 16px;
+  }
+}
+
+/* Mobile view improvements */
+@media (max-width: 480px) {
+  .phone-showcase {
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .phone-mockup {
+    width: 200px;
+    height: 400px;
+  }
+
+  .secondary-phones {
+    flex-direction: row;
+    margin-left: 0;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* Significantly increase mini-phone size for mobile */
+  .mini-phone {
+    width: 90px;
+    height: 180px;
+    border-radius: 14px;
+    opacity: 0.9; /* Make them more visible */
+  }
+
+  .mini-phone:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+  .phone-mockup {
+    width: 180px;
+    height: 360px;
+  }
+
+  .secondary-phones {
+    gap: 12px;
+  }
+
+  /* Still maintain reasonable size on very small screens */
+  .mini-phone {
+    width: 80px;
+    height: 160px;
+    border-radius: 12px;
+  }
+}
+
+/* Alternative layout for mobile if you want larger mini-phones */
+@media (max-width: 480px) {
+  /* Option 1: Make mini-phones even larger */
+  .mini-phone-large {
+    width: 110px;
+    height: 220px;
+    border-radius: 16px;
+  }
+
+  /* Option 2: Stack mini-phones vertically on very small screens */
+  .secondary-phones-vertical {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .secondary-phones-vertical .mini-phone {
+    width: 120px;
+    height: 240px;
+  }
+}
+
+/* Enhanced hover effects for mobile */
+@media (max-width: 768px) {
+  .mini-phone {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(124, 58, 237, 0.2);
+  }
+
+  .mini-phone:hover {
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+    border-color: rgba(59, 130, 246, 0.4);
+  }
+}
