@@ -25,7 +25,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 } */
 
-
 * {
   margin: 0;
   padding: 0;
@@ -801,6 +800,197 @@ body {
   }
 }
 
+/* Hero Section Mobile Responsive Fixes */
+
+/* Update existing mobile media queries */
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  /* Fix hero text spacing and sizing */
+  .hero-text h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    margin-bottom: 20px;
+  }
+
+  .hero-text .tagline {
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
+    margin-bottom: 20px;
+  }
+
+  .hero-text .description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
+  /* Fix platform badges layout */
+  .platform-badges {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .badge {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+  }
+
+  /* Fix CTA buttons */
+  .cta-buttons {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .btn {
+    padding: 15px 25px;
+    font-size: 1rem;
+  }
+
+  /* Fix phone showcase layout */
+  .phone-showcase {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .phone-mockup {
+    width: 220px;
+    height: 440px;
+  }
+
+  .secondary-phones {
+    flex-direction: row;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .mini-phone {
+    width: 80px;
+    height: 160px;
+  }
+
+  /* Adjust floating elements */
+  .floating-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  /* Fix navigation for mobile */
+  .nav-links {
+    display: none;
+  }
+
+  .school-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Adjust hero padding */
+  .hero {
+    padding-top: 70px;
+  }
+}
+
+/* Additional fixes for smaller screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  /* Further reduce hero text sizes */
+  .hero-text h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 15px;
+  }
+
+  .hero-text .tagline {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    margin-bottom: 15px;
+  }
+
+  .hero-text .description {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+
+  /* Stack CTA buttons vertically on very small screens */
+  .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* Further reduce phone sizes */
+  .phone-mockup {
+    width: 180px;
+    height: 360px;
+  }
+
+  .mini-phone {
+    width: 60px;
+    height: 120px;
+  }
+
+  /* Reduce floating icons further */
+  .floating-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+
+  /* Reduce platform badges */
+  .badge {
+    padding: 8px 12px;
+    font-size: 0.7rem;
+  }
+
+  /* Adjust hero section padding */
+  .hero {
+    padding-top: 60px;
+    min-height: 90vh;
+  }
+}
+
+/* Fix for very small screens */
+@media (max-width: 320px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text .tagline {
+    font-size: 1rem;
+  }
+
+  .hero-text .description {
+    font-size: 0.85rem;
+  }
+
+  .phone-mockup {
+    width: 160px;
+    height: 320px;
+  }
+
+  .mini-phone {
+    width: 50px;
+    height: 100px;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+  }
+}
 
 /* Live Preview Section */
 .live-preview-section {
@@ -825,7 +1015,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
-  align-items: stretch; 
+  align-items: stretch;
   position: relative;
   /* z-index: 1; */
 }
@@ -836,14 +1026,13 @@ body {
   justify-content: center;
   align-items: center;
   /* background: linear-gradient(45deg, rgba(124, 58, 237, 0.1), rgba(59, 130, 246, 0.1)); */
-
 }
 
 .preview-info {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  min-height: 100%; 
+  min-height: 100%;
 }
 
 /* Rest of your existing CSS remains unchanged */
@@ -879,6 +1068,7 @@ body {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 15px 30px rgba(124, 58, 237, 0.3);
 }
 
 .info-card::before {
@@ -888,7 +1078,11 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(124, 58, 237, 0.05), rgba(59, 130, 246, 0.05));
+  background: linear-gradient(
+    45deg,
+    rgba(124, 58, 237, 0.05),
+    rgba(59, 130, 246, 0.05)
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -933,21 +1127,21 @@ body {
     text-align: center;
     align-items: center; /* Reset for single-column layout */
   }
-  
+
   .preview-frame {
     padding: 20px;
     min-height: auto; /* Reset min-height for mobile */
   }
-  
+
   .preview-info {
     min-height: auto; /* Reset min-height for mobile */
   }
-  
+
   .appetize-iframe {
     width: 300px;
     height: 635px;
   }
-  
+
   .info-card {
     padding: 25px;
   }
@@ -957,21 +1151,20 @@ body {
   .live-preview-section {
     padding: 80px 0;
   }
-  
+
   .appetize-iframe {
     width: 280px;
     height: 590px;
   }
-  
+
   .preview-frame {
     padding: 15px;
   }
-  
+
   .info-card {
     padding: 20px;
   }
 }
-
 
 .preview-frame {
   position: relative;
@@ -986,6 +1179,7 @@ body {
   transition: all 0.3s ease;
   overflow: hidden;
   padding: 20px;
+  box-shadow: 0 15px 30px rgba(124, 58, 237, 0.3);
 }
 
 .preview-frame::before {
@@ -995,7 +1189,11 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(124, 58, 237, 0.05), rgba(59, 130, 246, 0.05));
+  background: linear-gradient(
+    45deg,
+    rgba(124, 58, 237, 0.05),
+    rgba(59, 130, 246, 0.05)
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
@@ -1016,7 +1214,7 @@ body {
   width: 100%;
   max-width: 378px;
   height: 700px;
-  background: #000;
+  /* background: #000; */
   transition: transform 0.3s ease;
 }
 

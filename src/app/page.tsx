@@ -29,6 +29,7 @@ import {
   Check,
 } from "lucide-react";
 import LivePreviewSection from "./LivePreviewSection";
+import PlatformBadges from "./PlatformBadges";
 
 const features = [
   {
@@ -357,7 +358,7 @@ export default function Home() {
                 child's educational journey through smart automation.
               </p>
 
-              <div className="platform-badges">
+              {/* <div className="platform-badges">
                 <span className="badge">
                   <Bot className="w-5 h-5 inline mr-2" /> iOS App
                 </span>
@@ -370,8 +371,8 @@ export default function Home() {
                 <span className="badge">
                   <Bot className="w-5 h-5 inline mr-2" /> AI Assistant
                 </span>
-              </div>
-
+              </div> */}
+              <PlatformBadges />
               <div className="cta-buttons">
                 <button
                   className="btn btn-primary"
