@@ -223,25 +223,27 @@ export default function Home() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0)";
+          (entry.target as HTMLElement).style.opacity = "1";
+          (entry.target as HTMLElement).style.transform = "translateY(0)";
         }
       });
     }, observerOptions);
 
     document.querySelectorAll(".feature-card").forEach((card, index) => {
-      card.style.opacity = "0";
-      card.style.transform = "translateY(50px)";
-      card.style.transition = `opacity 0.8s ease ${
+      const htmlCard = card as HTMLElement;
+      htmlCard.style.opacity = "0";
+      htmlCard.style.transform = "translateY(50px)";
+      htmlCard.style.transition = `opacity 0.8s ease ${
         index * 0.2
       }s, transform 0.8s ease ${index * 0.2}s`;
       observer.observe(card);
     });
 
     document.querySelectorAll(".pricing-card").forEach((card, index) => {
-      card.style.opacity = "0";
-      card.style.transform = "translateY(50px)";
-      card.style.transition = `opacity 0.8s ease ${
+      const htmlCard = card as HTMLElement;
+      htmlCard.style.opacity = "0";
+      htmlCard.style.transform = "translateY(50px)";
+      htmlCard.style.transition = `opacity 0.8s ease ${
         index * 0.2
       }s, transform 0.8s ease ${index * 0.2}s`;
       observer.observe(card);
@@ -249,33 +251,35 @@ export default function Home() {
 
     const footer = document.querySelector(".footer");
     if (footer) {
-      footer.style.opacity = "0";
-      footer.style.transform = "translateY(50px)";
-      footer.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+      const htmlFooter = footer as HTMLElement;
+      htmlFooter.style.opacity = "0";
+      htmlFooter.style.transform = "translateY(50px)";
+      htmlFooter.style.transition = "opacity 0.8s ease, transform 0.8s ease";
       observer.observe(footer);
     }
 
     // Parallax effect for hero visual
-const handleMouseMove = (e: MouseEvent) => {
-  if (heroVisualRef.current) {
-    const x = (e.clientX / window.innerWidth - 0.5) * 20;
-    const y = (e.clientY / window.innerHeight - 0.5) * 20;
-    heroVisualRef.current.style.transform = `translate(${x}px, ${y}px)`;
-  }
-};
+    const handleMouseMove = (e: MouseEvent) => {
+      if (heroVisualRef.current) {
+        const x = (e.clientX / window.innerWidth - 0.5) * 20;
+        const y = (e.clientY / window.innerHeight - 0.5) * 20;
+        heroVisualRef.current.style.transform = `translate(${x}px, ${y}px)`;
+      }
+    };
 
     window.addEventListener("mousemove", handleMouseMove);
 
     // Dynamic badge animation
     const badges = document.querySelectorAll(".badge");
     badges.forEach((badge, index) => {
-      badge.style.animationDelay = `${index * 0.2}s`;
-      badge.style.opacity = "0";
-      badge.style.transform = "translateY(20px)";
+      const htmlBadge = badge as HTMLElement;
+      htmlBadge.style.animationDelay = `${index * 0.2}s`;
+      htmlBadge.style.opacity = "0";
+      htmlBadge.style.transform = "translateY(20px)";
       setTimeout(() => {
-        badge.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-        badge.style.opacity = "1";
-        badge.style.transform = "translateY(0)";
+        htmlBadge.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+        htmlBadge.style.opacity = "1";
+        htmlBadge.style.transform = "translateY(0)";
       }, index * 200);
     });
 
