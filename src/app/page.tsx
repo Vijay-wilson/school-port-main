@@ -347,7 +347,7 @@ export default function Home() {
         <div className="container">
           <div className="hero-content">
             <div className="hero-text">
-              <h1>School Port</h1>
+              <h1>mobiCampus</h1>
               <p className="tagline">
                 AI-Powered Education Management Revolution
               </p>
@@ -480,9 +480,9 @@ export default function Home() {
       <footer className="footer" id="contact">
         <div className="container footer-container">
           <div className="footer-column">
-            <h4>About School Port</h4>
+            <h4>About mobiCampus</h4>
             <p>
-              School Port is an AI-powered education management platform
+              mobiCampus is an AI-powered education management platform
               revolutionizing how schools, parents, and students connect and
               collaborate.
             </p>
@@ -505,6 +505,17 @@ export default function Home() {
             </ul>
           </div>
           <div className="footer-column">
+            <h4>Legal</h4>
+            <ul>
+              <li>
+                <a href="/privacy-policy">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="/terms-conditions">Terms & Conditions</a>
+              </li>
+            </ul>
+          </div>
+          <div className="footer-column">
             <h4>Connect With Us</h4>
             <div className="social-icons">
               <a href="#">
@@ -523,7 +534,7 @@ export default function Home() {
           </div>
         </div>
         <div className="footer-bottom">
-          © 2025 School Port. All rights reserved.
+          © 2025 mobiCampus. All rights reserved.
         </div>
       </footer>
     </div>

@@ -6,7 +6,7 @@ const LivePreviewSection = () => {
       <section className="live-preview-section" id="live-preview">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Experience School Port Live</h2>
+            <h2 className="section-title">Experience mobiCampus Live</h2>
             <p className="section-subtitle">
               Try our mobile app directly in your browser. No download required
               - interact with the real app interface and explore all features.
@@ -19,7 +19,7 @@ const LivePreviewSection = () => {
                 data="https://appetize.io/embed/b_tq5jroy6vf6rtamsgmjvnjfhie"
                 width="378"
                 height="800"
-                title="School Port Live Preview"
+                title="mobiCampus Live Preview"
                 className="appetize-object"
               >
                 <p>Your browser does not support this object.</p>
