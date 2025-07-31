@@ -13,6 +13,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import "./PrivacyPolicy.css";
+
 const PrivacyPolicyPage = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState("");
@@ -38,7 +39,7 @@ const PrivacyPolicyPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(`[data-section="${sectionId}"]`);
     if (element) {
       const headerOffset = 80;
@@ -59,6 +60,11 @@ const PrivacyPolicyPage = () => {
     children,
     icon: IconComponent,
     sectionId,
+  }: {
+    title: string;
+    children: React.ReactNode;
+    icon: React.ComponentType<{ size?: number }>;
+    sectionId: string;
   }) => (
     <section data-section={sectionId} className="policy-section">
       <div className="section-header">

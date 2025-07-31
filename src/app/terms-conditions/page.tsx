@@ -38,7 +38,7 @@ const TermsAndConditionsPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(`[data-section="${sectionId}"]`);
     if (element) {
       const headerOffset = 80;
@@ -58,6 +58,11 @@ const TermsAndConditionsPage = () => {
     children,
     icon: IconComponent,
     sectionId,
+  }: {
+    title: string;
+    children: React.ReactNode;
+    icon: React.ComponentType<{ size?: number }>;
+    sectionId: string;
   }) => (
     <section data-section={sectionId} className="policy-section">
       <div className="section-header">
