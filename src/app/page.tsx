@@ -44,21 +44,21 @@ const features = [
     title: "Calendar",
     description:
       "Stay organized with an AI-driven calendar that syncs school events, parent-teacher meetings, and holidays, offering smart reminders and conflict-free scheduling.",
-    image: "/images/school-diary.png",
+    image: "/images/school-calendar.png",
   },
-  {
-    icon: <CheckSquare className="w-6 h-6" />,
-    title: "Assignments",
-    description:
-      "Track and manage assignments with AI-powered tools, including automated deadline alerts, progress tracking, and personalized submission reminders.",
-    image: "/images/school-diary.png",
-  },
+  // {
+  //   icon: <CheckSquare className="w-6 h-6" />,
+  //   title: "Assignments",
+  //   description:
+  //     "Track and manage assignments with AI-powered tools, including automated deadline alerts, progress tracking, and personalized submission reminders.",
+  //   image: "/images/school-diary.png",
+  // },
   {
     icon: <Users className="w-6 h-6" />,
     title: "Parents Essentials",
     description:
       "Access essential tools for parents, including real-time updates on student progress, fee payments, and direct communication with teachers.",
-    image: "/images/school-diary.png",
+    image: "/images/parents-essentials.png",
   },
   {
     icon: <BookOpen className="w-6 h-6" />,
@@ -72,63 +72,63 @@ const features = [
     title: "Leave Request",
     description:
       "Streamline leave applications with an intuitive system, featuring automated approvals, status tracking, and instant notifications for parents and staff.",
-    image: "/images/school-diary.png",
+    image: "/images/leave-request.png",
   },
   {
     icon: <Newspaper className="w-6 h-6" />,
     title: "News Letter",
     description:
       "Stay informed with AI-curated newsletters, delivering school updates, events, and achievements directly to parents and students.",
-    image: "/images/school-diary.png",
+    image: "/images/school-news-letter.png",
   },
   {
     icon: <ImageIcon className="w-6 h-6" />,
     title: "Gallery",
     description:
       "Explore a secure, organized gallery of school events, activities, and student achievements, with AI-enhanced tagging and easy sharing options.",
-    image: "/images/school-diary.png",
+    image: "/images/school-gallery.png",
   },
   {
     icon: <Mail className="w-6 h-6" />,
     title: "Contact Us",
     description:
       "Connect effortlessly with school staff through an integrated communication system, featuring AI-driven query prioritization and response tracking.",
-    image: "/images/school-diary.png",
+    image: "/images/school-contact.png",
   },
   {
     icon: <Share2 className="w-6 h-6" />,
     title: "Social Media",
     description:
       "Engage with the school community through integrated social media features, sharing updates and events with AI-optimized content scheduling.",
-    image: "/images/school-diary.png",
+    image: "/images/school-social-media.png",
   },
-  {
-    icon: <BarChart3 className="w-6 h-6" />,
-    title: "Reports",
-    description:
-      "Access detailed, AI-generated reports on academic performance, attendance, and behavior, with personalized insights and visual analytics.",
-    image: "/images/school-diary.png",
-  },
+  // {
+  //   icon: <BarChart3 className="w-6 h-6" />,
+  //   title: "Reports",
+  //   description:
+  //     "Access detailed, AI-generated reports on academic performance, attendance, and behavior, with personalized insights and visual analytics.",
+  //   image: "/images/school-reports.png",
+  // },
   {
     icon: <Megaphone className="w-6 h-6" />,
     title: "Circulars",
     description:
       "Receive and manage school circulars with an AI-powered system, ensuring timely delivery, read receipts, and organized archiving.",
-    image: "/images/school-diary.png",
+    image: "/images/school-circulars.png",
   },
   {
     icon: <Book className="w-6 h-6" />,
     title: "Home Work",
     description:
       "Manage homework assignments with AI-driven tools, offering task prioritization, completion tracking, and personalized study recommendations.",
-    image: "/images/school-diary.png",
+    image: "/images/school-home-work.png",
   },
   {
     icon: <Settings className="w-6 h-6" />,
     title: "PTA",
     description:
       "Enhance parent-teacher collaboration with an AI-supported PTA platform, facilitating meeting scheduling, feedback collection, and community engagement.",
-    image: "/images/school-diary.png",
+    image: "/images/school-pta.png",
   },
 ];
 
