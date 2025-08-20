@@ -2,10 +2,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { FaEnvelope, FaPhone, FaMapPin } from "react-icons/fa";
 import {
   Bot,
   Calendar,
-  CheckSquare,
   Users,
   BookOpen,
   ClipboardCheck,
@@ -13,24 +13,17 @@ import {
   Image as ImageIcon,
   Mail,
   Share2,
-  BarChart3,
   Megaphone,
   Book,
   Settings,
-  Download,
-  PlayCircle,
-  Brain,
-  ChartLine,
-  GraduationCap,
   Twitter,
   Facebook,
   Linkedin,
   Instagram,
-  Check,
 } from "lucide-react";
 import LivePreviewSection from "./LivePreviewSection";
-import PlatformBadges from "./PlatformBadges";
-
+import ContactForm from "./ContactForm";
+import HeroSection from "./HeroSection";
 const features = [
   {
     icon: <Bot className="w-6 h-6" />,
@@ -43,7 +36,7 @@ const features = [
     icon: <Calendar className="w-6 h-6" />,
     title: "Calendar",
     description:
-      "Stay organized with an AI-driven calendar that syncs school events, parent-teacher meetings, and holidays, offering smart reminders and conflict-free scheduling.",
+      "The Calendar module feature allows users to view and manage school-related events and activities. It's integrated with the device's native calendar for event management.",
     image: "/images/school-calendar.png",
   },
   // {
@@ -57,7 +50,7 @@ const features = [
     icon: <Users className="w-6 h-6" />,
     title: "Parents Essentials",
     description:
-      "Access essential tools for parents, including real-time updates on student progress, fee payments, and direct communication with teachers.",
+      "Parents Essentials feature serves as a one-stop-shop for parents to access all essential school-related information, helping them stay informed and connected with their child's educational journey.",
     image: "/images/parents-essentials.png",
   },
   {
@@ -71,35 +64,35 @@ const features = [
     icon: <ClipboardCheck className="w-6 h-6" />,
     title: "Leave Request",
     description:
-      "Streamline leave applications with an intuitive system, featuring automated approvals, status tracking, and instant notifications for parents and staff.",
+      "Designed to be intuitive and user-friendly, helping parents manage their child's attendance needs efficiently while keeping the school administration informed.",
     image: "/images/leave-request.png",
   },
   {
     icon: <Newspaper className="w-6 h-6" />,
     title: "News Letter",
     description:
-      "Stay informed with AI-curated newsletters, delivering school updates, events, and achievements directly to parents and students.",
+      "A digital communication platform that allows the school to share important updates, news, and information with parents and students in an organized, accessible format.",
     image: "/images/school-news-letter.png",
   },
   {
     icon: <ImageIcon className="w-6 h-6" />,
     title: "Gallery",
     description:
-      "Explore a secure, organized gallery of school events, activities, and student achievements, with AI-enhanced tagging and easy sharing options.",
+      "A multimedia showcase that allows users to browse through school-related photos and videos. It's designed to provide an engaging visual experience while maintaining easy navigation between different media types.",
     image: "/images/school-gallery.png",
   },
   {
     icon: <Mail className="w-6 h-6" />,
     title: "Contact Us",
     description:
-      "Connect effortlessly with school staff through an integrated communication system, featuring AI-driven query prioritization and response tracking.",
+      "Contact Us provides essential contact information and communication channels for parents and students to reach the school administration.",
     image: "/images/school-contact.png",
   },
   {
     icon: <Share2 className="w-6 h-6" />,
     title: "Social Media",
     description:
-      "Engage with the school community through integrated social media features, sharing updates and events with AI-optimized content scheduling.",
+      "This feature integrates the school's social media presence, allowing the community to stay connected and engaged with the latest updates and events.",
     image: "/images/school-social-media.png",
   },
   // {
@@ -113,68 +106,26 @@ const features = [
     icon: <Megaphone className="w-6 h-6" />,
     title: "Circulars",
     description:
-      "Receive and manage school circulars with an AI-powered system, ensuring timely delivery, read receipts, and organized archiving.",
+      "Serves as a digital notice board for important school announcements, circulars, and official communications.",
     image: "/images/school-circulars.png",
   },
   {
     icon: <Book className="w-6 h-6" />,
     title: "Home Work",
     description:
-      "Manage homework assignments with AI-driven tools, offering task prioritization, completion tracking, and personalized study recommendations.",
+      "Manage homework assignments with tools that offer task prioritization, completion tracking, personalized study recommendations, and timely reminders to stay on schedule.",
     image: "/images/school-home-work.png",
   },
   {
     icon: <Settings className="w-6 h-6" />,
     title: "PTA",
     description:
-      "Enhance parent-teacher collaboration with an AI-supported PTA platform, facilitating meeting scheduling, feedback collection, and community engagement.",
+      "A platform for meeting scheduling, feedback collection, and community engagement, with options to view scheduled meetings and manage bookings in the history section.",
     image: "/images/school-pta.png",
   },
 ];
 
-const pricingPlans = [
-  {
-    name: "Basic Plan",
-    price: "$99",
-    period: "/month",
-    features: [
-      "Access to Core Features",
-      "Up to 100 Students",
-      "Basic AI Analytics",
-      "Email Support",
-    ],
-    buttonText: "Get Started",
-    buttonClass: "btn-primary",
-  },
-  {
-    name: "Pro Plan",
-    price: "$299",
-    period: "/month",
-    features: [
-      "All Basic Features",
-      "Up to 500 Students",
-      "Advanced AI Analytics",
-      "Priority Support",
-      "Custom Integrations",
-    ],
-    buttonText: "Get Started",
-    buttonClass: "btn-primary",
-  },
-  {
-    name: "Enterprise Plan",
-    price: "Custom",
-    period: "",
-    features: [
-      "All Pro Features",
-      "Unlimited Students",
-      "Dedicated AI Assistant",
-      "24/7 Premium Support",
-      "Custom Development",
-    ],
-    buttonText: "Contact Sales",
-    buttonClass: "btn-secondary",
-  },
-];
+
 
 export default function Home() {
   const heroVisualRef = useRef<HTMLDivElement>(null);
@@ -240,15 +191,7 @@ export default function Home() {
       observer.observe(card);
     });
 
-    document.querySelectorAll(".pricing-card").forEach((card, index) => {
-      const htmlCard = card as HTMLElement;
-      htmlCard.style.opacity = "0";
-      htmlCard.style.transform = "translateY(50px)";
-      htmlCard.style.transition = `opacity 0.8s ease ${
-        index * 0.2
-      }s, transform 0.8s ease ${index * 0.2}s`;
-      observer.observe(card);
-    });
+
 
     const footer = document.querySelector(".footer");
     if (footer) {
@@ -332,9 +275,9 @@ export default function Home() {
             <li>
               <a href="#features">Features</a>
             </li>
-            <li>
+            {/* <li>
               <a href="#pricing">Pricing</a>
-            </li>
+            </li> */}
             <li>
               <a href="#contact">Contact</a>
             </li>
@@ -342,70 +285,8 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="hero" id="home">
-        <div className="container">
-          <div className="hero-content">
-            <div className="hero-text">
-              <h1>mobiCampus</h1>
-              <p className="tagline">
-                AI-Powered Education Management Revolution
-              </p>
-              <p className="description">
-                Experience the future of education with our cutting-edge AI
-                platform. Seamlessly manage multiple schools, track academic
-                progress with intelligent insights, and revolutionize your
-                child's educational journey through smart automation.
-              </p>
-              <PlatformBadges />
-              <div className="cta-buttons">
-                <button
-                  className="btn btn-primary"
-                  onClick={() =>
-                    window.open(
-                      "https://drive.google.com/file/d/1vSDRwIAC43EA7SmyRlRyBHKvYs74rA8k/view?usp=sharing",
-                      "_blank",
-                      "noopener,noreferrer"
-                    )
-                  }
-                >
-                  <Download className="w-5 h-5 mr-2" /> Download App
-                </button>
+      <HeroSection />
 
-                <a href="#live-preview" className="btn btn-secondary">
-                  <PlayCircle className="w-5 h-5 mr-2" /> Live Preview
-                </a>
-              </div>
-            </div>
-
-            <div className="hero-visual" ref={heroVisualRef}>
-              <div className="phone-showcase">
-                <div className="phone-mockup"></div>
-                <div className="secondary-phones">
-                  <div className="mini-phone"></div>
-                  <div className="mini-phone"></div>
-                  <div className="mini-phone"></div>
-                </div>
-              </div>
-
-              <div className="floating-elements">
-                <div className="floating-icon">
-                  <Brain className="w-6 h-6" />
-                </div>
-                <div className="floating-icon">
-                  <Bot className="w-6 h-6" />
-                </div>
-                <div className="floating-icon">
-                  <ChartLine className="w-6 h-6" />
-                </div>
-                <div className="floating-icon">
-                  <GraduationCap className="w-6 h-6" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <LivePreviewSection />
       {/* Features Section */}
       <section className="features-section" id="features">
@@ -426,7 +307,7 @@ export default function Home() {
                   className="card-image"
                   style={{ backgroundImage: `url(${feature.image})` }}
                 >
-                  <div className="feature-icon">{feature.icon}</div>
+                  {/* <div className="feature-icon">{feature.icon}</div> */}
                 </div>
                 <div className="card-content">
                   <h3 className="feature-title">{feature.title}</h3>
@@ -438,40 +319,69 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Plans and Pricing Section */}
-      <section className="pricing-section" id="pricing">
+      {/* Contact Us Section */}
+      <section className="contact-section" id="contact">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Plans and Pricing</h2>
+            <h2 className="section-title">Contact Us</h2>
             <p className="section-subtitle">
-              Choose the perfect plan for your school or family, with flexible
-              pricing tailored to your needs.
+              Whether you require a simple website, a mobile app, some bespoke
+              software, or you're looking to build your own development team,
+              every venture starts with a simple email or phone call.
             </p>
           </div>
+          <div className="contact-grid">
+            {/* Left Card - Contact Details */}
+            <div className="contact-card">
+              <h3>We'd love to hear from you</h3>
+              <p className="lead">
+                Reach out for product demos, pricing, partnerships, or general
+                questions.
+              </p>
 
-          <div className="pricing-grid">
-            {pricingPlans.map((plan, index) => (
-              <div className="pricing-card" key={index}>
-                <h3>{plan.name}</h3>
-                <div className="price">
-                  {plan.price}
-                  <span>{plan.period}</span>
+              <div className="contact-items">
+                <div className="contact-item">
+                  <span className="input-icon">
+                    <FaEnvelope />
+                  </span>
+                  <div className="content">
+                    <span className="label">Email</span>
+                    <span className="value">
+                      <a href="mailto:info@mobatia.com">info@mobatia.com</a>
+                    </span>
+                  </div>
                 </div>
-                <ul>
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx}>
-                      <Check className="inline w-5 h-5" /> {feature}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={plan.buttonClass === "btn-secondary" ? "#contact" : "#"}
-                  className={`btn ${plan.buttonClass}`}
-                >
-                  {plan.buttonText}
-                </a>
+
+                <div className="contact-item">
+                  <span className="input-icon">
+                    <FaPhone />
+                  </span>
+                  <div className="content">
+                    <span className="label">Phone</span>
+                    <span className="value">
+                      <a href="tel:+917012927872">+91 7012927872</a>
+                    </span>
+                  </div>
+                </div>
+
+                <div className="contact-item">
+                  <span className="input-icon">
+                    <FaMapPin />
+                  </span>
+                  <div className="content">
+                    <span className="label">Location</span>
+                    <span className="value">
+                      Mobatia Technology Private Ltd, 1F,Carnival
+                      Technopark,Technopark Campus,Thiruvananthapuram, Kerala
+                      695581
+                    </span>
+                  </div>
+                </div>
               </div>
-            ))}
+            </div>
+            <div className="contact-card">
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>
@@ -496,9 +406,9 @@ export default function Home() {
               <li>
                 <a href="#features">Features</a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#pricing">Pricing</a>
-              </li>
+              </li> */}
               <li>
                 <a href="#contact">Contact</a>
               </li>
@@ -513,21 +423,42 @@ export default function Home() {
               <li>
                 <a href="/terms-conditions">Terms & Conditions</a>
               </li>
+              <li>
+                <a href="/delete-account" aria-label="Request account deletion">
+                  Delete Account
+                </a>
+              </li>
             </ul>
           </div>
           <div className="footer-column">
             <h4>Connect With Us</h4>
             <div className="social-icons">
-              <a href="#">
+              <a
+                href="https://x.com/mobatia"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Twitter className="w-6 h-6" />
               </a>
-              <a href="#">
+              <a
+                href="https://www.facebook.com/mobatiatechnology"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Facebook className="w-6 h-6" />
               </a>
-              <a href="#">
+              <a
+                href="https://www.linkedin.com/company/mobatia/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="#">
+              <a
+                href="https://www.instagram.com/mobatia_technology/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Instagram className="w-6 h-6" />
               </a>
             </div>

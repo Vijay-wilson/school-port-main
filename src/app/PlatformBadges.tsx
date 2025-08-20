@@ -34,7 +34,7 @@ const PlatformBadges: React.FC<PlatformBadgesProps> = ({ className = '' }) => {
     alignItems: 'center',
     background: 'rgba(124, 58, 237, 0.1)',
     border: '1px solid rgba(124, 58, 237, 0.3)',
-    padding: isSmallMobile ? '8px 12px' : isMobile ? '10px 16px' : '12px 20px',
+    padding: isSmallMobile ? '4px 6px' : isMobile ? '5px 8px' : '6px 10px',
     borderRadius: '50px',
     color: 'white',
     fontSize: isSmallMobile ? '0.7rem' : isMobile ? '0.8rem' : '0.9rem',

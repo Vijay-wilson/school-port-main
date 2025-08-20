@@ -1,0 +1,103 @@
+
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+}
+.delete-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #1e293b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+.delete-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e2e8f0;
+  z-index: 999;
+  padding: 1rem 0;
+}
+
+.delete-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.delete-header-subtitle {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.delete-hero {
+  padding: 6rem 2rem 2rem;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  text-align: center;
+}
+
+.delete-hero-content { max-width: 800px; margin: 0 auto; }
+.delete-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fee2e2;
+  color: #ed1f24
+;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.delete-hero-title { font-size: 2rem; font-weight: 800; color: #1e293b; margin-bottom: 0.5rem; }
+.delete-hero-description { color: #64748b; }
+
+.delete-main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+.delete-form-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.delete-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+.delete-section-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: #fee2e2; color: #ed1f24; }
+.delete-section-title { font-size: 1.25rem; font-weight: 600; color: #1e293b; }
+
+.delete-form { display: grid; gap: 1rem; }
+.delete-row { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+@media (min-width: 768px) { .delete-row { grid-template-columns: 1fr 1fr; } }
+.delete-input label { display: block; font-size: 0.9rem; color: #475569; margin-bottom: 0.35rem; }
+.delete-input-wrap { display: flex; gap: 0.5rem; align-items: center; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.6rem 0.75rem; }
+.delete-input-wrap textarea, .delete-input-wrap input, .delete-input-wrap select { border: none; outline: none; background: transparent; width: 100%; color: #111827; font-size: 0.95rem; }
+.delete-input-wrap.textarea { align-items: flex-start; }
+.delete-input-wrap textarea { min-height: 96px; }
+
+.delete-consent { display: flex; gap: 0.5rem; align-items: flex-start; color: #475569; font-size: 0.9rem; }
+.delete-consent input { margin-top: 2px; }
+
+.delete-submit { display: inline-flex; align-items: center; justify-content: center; background: #ed1f24; color: white; padding: 0.75rem 1rem; border-radius: 10px; border: none; cursor: pointer; font-weight: 600; }
+.delete-submit:hover { background: #ed1f24; }
+.delete-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+
+.delete-status { margin-top: 0.5rem; }
+.delete-status .ok { color: #16a34a; }
+.delete-status .err { color: #ed1f24; }
+
+
